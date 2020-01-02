@@ -1,0 +1,16 @@
+Employee Details:{{empDetails | json}}
+<BR/> Emplyee Name : {{ empDetails }}<br/>
+
+====================By using RouterLink'=================
+<ul>
+  <li *ngFor="let item of empDetails">
+  <a [routerLink]="['/employee',item.id]">{{item.empName}}</a>
+  </li>
+</ul>
+
+====================By using Router'=================
+<ul>
+  <li *ngFor="let item of empDetails">
+  <a href="javascript:void(0)" [ngClass]="{'active': item.id == 2}" (click)="navigateEmp(item.id)">{{item.empName}}</a>
+  </li>
+</ul>
